@@ -1,9 +1,8 @@
 //
-//  myExecutable.cpp
+//  main.cpp
 //  algo1_hw1
 //
 //  Created by Hasan Furkan Vural on 15.10.2018.
-//  150140029
 //  Copyright © 2018 H. Furkan Vural. All rights reserved.
 //
 /**********************************************************************************************************************
@@ -15,25 +14,10 @@ While compiling please use "g++ myExecutable.cpp -algo m -feature p -size 100000
 #include <fstream>
 #include <string>
 #include <time.h>
+#include "DataObj.h"
 
 using namespace std;
 
-class DataObj
-{
-public:
-    string timestamp;
-    string instrument_token;
-    double last_price;
-    string otherinfo;
-    
-    void getvalts(string x){timestamp=x;}
-    void getvalit(string x){instrument_token=x;}
-    void getvallp(string x){double fx = stod(x); last_price = fx;}
-    void getvaloi(string x){otherinfo=x;}
-    DataObj operator=( DataObj&) ;
-    DataObj(){}
-    
-};
 void merge(DataObj A[], int start, int end, string feature);
 void merge_sort(DataObj A[], int start, int end, string feature);
 void insertion_sort(DataObj A[], int size, string feature);
@@ -41,6 +25,7 @@ void insertion_sort(DataObj A[], int size, string feature);
 
 int main(int argc, const char * argv[]) {
     
+    cout<<"deneme";
     ifstream dataFile("log_inf.csv");
     int size, i=0;
     string emptystr, algo, feature;
